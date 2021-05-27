@@ -6,3 +6,6 @@ git commit
 git push 
 
 HEAD - most recent commit
+branch
+
+trial and error

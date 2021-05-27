@@ -1,0 +1,61 @@
+GITHUB NOTE
+
+Basic Git Commands 
+ 1.>> ls  --- This will list the sub file at each level
+ 2.>> cd desktop --- this will take you to the directory  desktop, while cd .. --- this will take you to the parent directory, 
+	if the name of the folder has space put it in quote e.g 'All folder', to move two steps folder down >> cd desktop/'all folder'
+	to move two steps folders up >> cd../..  while three steps folder up >> cd../../..
+ 3.>> git status --- This tells if there is a change to any file
+ 4.>> git add -- To add new files to a staging area e.g >>> git add example.py
+ 5.>> git commit -- Take the files in the staging area to the local storage
+ 6.>> git commit -m 'This is the associated comment'  --- this commits the file(s) in the staging area to the storage and adds a message "This is..." to it.
+ 7.>> git log --- this shows you all your commit history
+ 8.>> git push --- this pushs the committed files to the cloud storage(on the website)
+ 9.>> git difftool --- it shows the changes between the new changes you have made yo and file and the previous version of the same file
+ 10.>> git checkout -- filename.extension --- this reverts the last updated file to the prevoius version
+11.>> git checkout -- . --- This reverts all files at the same time.
+12.>> git revert "commit id" --- this helps to revert commited file, it pops up a UI which you close by typing >>:q 
+ 13.>> git revert "commit id"  -n --- To revert a committed file without commiting it(That is i want to explicitly commit it ) 
+ 14.>> git reset --hard "commit id"  --- this takes you to any timestamp in your code(Note that the change is permanent)
+ 15.>> git branch --- this lists all the branches in the Git Bash, but by default we only have master branch
+ 16.>> git branch name --- this creates a branch called name
+ 17.>> git checkout name --- This make branch name the active branch
+ 18. To merge branch, go the base branch(master) and type >>git merge "name of branch" after which you type the commit message >>:wq
+ 19.>> clear --- this clears the screen
+ 20.  To push a Branch to the cloud service
+		1. >>git checkout branch-name   --- this is the name of the branch to be pushed.
+		2. >>git push --- this returns a command like this " git push --set-upstream origin thirsty"
+		3. copy and paste this command and press enter
+		
+21 git checkout -b dummy --- This command creates and commits the dummy branch
+22.  To delete a branches 
+		1. checkout to the master branch >> git checkout master
+		2. >> git branch -d dummy
+23. HEAD - This refer to the most recent commit >> git show HEAD
+	this show the detailed information about the latest commit, typing "git show HEAD" and git show "latest commit id" gives you the same output.
+24. >> git show HEAD~1 --- This show the detailed information of the second last commit
+	HEAD~2 -> third last etc.
+25. >> git difftool "older commit id" "more recent commit id" --- This show the difference between the two commits in the editor or GUI(The read outlines represent the
+	changes made).
+	So, the command can also be written as >> git show HEAD~2 HEAD~1 if it is between the two latest commits.
+26. >> git checkout "commit id" --- This changes the head to the commit id which might no be the latest, this is called detached HEAD(More like truncated HEAD)
+27. To come out of the detached HEAD -> >> git checkout master OR >> git checkout "prevoius HEAD commit id" , before doing the detached HEAD make sure you create 
+	another branch to serve as back-up.
+GITIGNORE- This is a file created in the git repository to hide all the files that is supposed to be hidden.
+ to create it
+>> touch .gitignore
+then add the files to it in the file explorer, then do
+>> git add
+>> git commit -m"commit message"
+
+>> git difftool origin/master --- This shows the difference between the local and the upstream using the GUI, but if not good enough you can install the meld tool
+
+>> git difftool --- this shows the difference between uncommitted changes and your HEAD.
+
+If your files go out of sync(i.e the you make changes to the file upstream and the file on the editor, and after pull from upstream the gitbash bring an out of sync )
+first, use >> git pull 
+then, >> git mergetool , this command requires a mergetool install 
+then, you can add, commit, push
+
+
+git config --global core.editor "C:\Windows\gvim.bat' -f-i NONE"

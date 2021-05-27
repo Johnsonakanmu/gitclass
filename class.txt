@@ -1,2 +1,8 @@
 git  and github
  version control system
+code  -> staging  area ->  local machine  ->  cloud 
+git add 
+git commit 
+git push 
+
+HEAD - most recent commit
